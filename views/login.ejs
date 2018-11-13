@@ -1,0 +1,61 @@
+<% include partials/header %>
+
+  <h2 class="ui dividing center aligned header">Please login in to your account!</h2>
+  <div class="ui text container">
+    <div class="ui segments">
+      <form class="ui small form" action="/login" method="POST">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" placeholder="Username">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password" autocomplete="password" required>
+            </div>
+          </div>
+            <div class="ui fluid large teal submit button">Login</div>
+        </div>
+          <div class="ui error message"></div>
+      </form>
+      <div class="ui message">
+        New to us? <a href="/register">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+      $('.ui.form').form({
+        fields: {
+          email: {
+            identifier  : 'username',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please enter your username'
+              }
+            ]
+          },
+          password: {
+            identifier  : 'password',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please enter your password'
+              },
+              {
+                type   : 'length[6]',
+                prompt : 'Your password must be at least 6 characters'
+              }
+            ]
+          }
+        }
+      });
+  });
+  </script>
+
+<% include partials/footer %>

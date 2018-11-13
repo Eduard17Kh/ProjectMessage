@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+    <h1 class="ui dividing center aligned header">Please fill the form to send a message</h1>
+
+    <div class="ui text container">
+        <div class="ui segments">
+            <form class="ui small form" action="/posts" method="POST">
+                <div class="ui segment">
+                    <div class="field">
+                        <label>Theme</label>
+                        <input type="text" name="name" placeholder="About...">
+                    </div>
+                    <div class="field">
+                        <label>Text of the letter</label>
+                        <textarea name="texts" placeholder="About..."></textarea>
+                    </div>
+                    <button class="ui button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  <% include partials/footer %>
