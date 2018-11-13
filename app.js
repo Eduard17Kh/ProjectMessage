@@ -13,7 +13,7 @@ var indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts");
 
 // database connect
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/postsProject2"
+var url = process.env.DATABASEURL || "mongodb://eduard:Ed2455989@ds261253.mlab.com:61253/project-message"
     mongoose.connect(url, { useNewUrlParser: true })
     .then(() => console.log("MongoDB has started..."))
     .catch(e => console.log(e));
